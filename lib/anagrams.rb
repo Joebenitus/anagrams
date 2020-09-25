@@ -10,6 +10,8 @@ class Anagram
   def get_matches
     if @word1_parsed.length != @word2_parsed.length
       false
+    elsif !self.word?
+      false
     else
       word_array = @word1_parsed.split('')
       bool_array = []
@@ -40,7 +42,7 @@ class Anagram
 
   def anagram_antigram
     common_letters = @word1_parsed.scan(/[#{@word2_parsed}]+/)
-    if !self.get_matches | (get_matches.include?(false) & get_matches.include?(true))
+    if !self.get_matches || (get_matches.include?(false) && get_matches.include?(true))
       common_letters = common_letters[0].split('').join(', ')
       "The words #{@word1} and #{@word2} are not anagrams but they shared the following letter(s): '#{common_letters}'"
     elsif !self.get_matches.include?(false)

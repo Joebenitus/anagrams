@@ -13,8 +13,8 @@ This program allows the user to input two words and checks whether they are anag
 * _open terminal_
 * _type "cd desktop", then press enter_
 * _type "git clone https://github.com/Joebenitus/anagrams", then press enter_
-* _type "cd anagrams", then press enter_
-* _type "./lib/app.rb"_
+* _type "cd anagrams/lib", then press enter_
+* _type "./app.rb", then press enter_
 
 ## Known Bugs
 
