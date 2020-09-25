@@ -5,7 +5,7 @@ class Anagram
     @word2 = word2.downcase
   end
 
-  def anagrams?
+  def get_matches
     if @word1.length != @word2.length
       false
     else
@@ -14,12 +14,12 @@ class Anagram
       word_array.each do |letter|
         bool_array.push(@word2.include? letter)
       end
-      bool_array.include?(false) ? false : true
+      bool_array
     end
   end
 
   def word?
-    if @word1.match(/[aeiou]/i) & @word2.match(/[aeiou]/i)
+    if @word1.match(/[aeiouy]/i) & @word2.match(/[aeiouy]/i)
       true
     else
       false
