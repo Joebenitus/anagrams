@@ -14,4 +14,8 @@ describe('Anagram') do
     new_test = Anagram.new('bird', 'bury')
     expect(new_test.anagrams?).to(eq(false))
   end
+  it('accounts for inputs with different casing') do
+    new_test = Anagram.new('RubY', 'BUry')
+    expect(new_test.anagrams?).to(eq(true))
+  end
 end

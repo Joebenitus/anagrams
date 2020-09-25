@@ -14,7 +14,7 @@ class Anagram
       word_array.each do |letter|
         bool_array.push(@word2.include? letter)
       end
+      bool_array.include?(false) ? false : true
     end
-  bool_array.include?(false) ? false : true
   end
 end
