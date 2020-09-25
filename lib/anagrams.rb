@@ -25,4 +25,7 @@ class Anagram
       false
     end
   end
+
+  def anagram_antigram
+  end
 end
