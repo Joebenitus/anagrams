@@ -30,4 +30,8 @@ describe('Anagram') do
     new_test = Anagram.new('live', 'bury')
     expect(new_test.anagram_antigram).to(eq('The words live and bury have no matches and are antigrams!'))
   end
+  it('add ability for anagram_antigram method to determine if input is neither anagrams or antigrams') do
+    new_test = Anagram.new('ball', 'bury')
+    expect(new_test.anagram_antigram).to(eq('The words ball and bury are not anagrams or antigrams'))
+  end
 end
