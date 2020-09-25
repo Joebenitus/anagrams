@@ -34,7 +34,7 @@ class Anagram
     words_combined = (@word1_parsed + @word2_parsed).split('')
     (words_combined.length/2).times() do |letter|
       if words_combined[letter] != words_combined[(letter+1)*(-1)]
-        false
+        return
       end
     end
     "#{@word1} #{@word2} is a palindrome!"

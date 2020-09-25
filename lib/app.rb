@@ -6,4 +6,5 @@ word1 = gets.chomp
 puts "Word 2:"
 word2 = gets.chomp
 anagram = Anagram.new(word1, word2)
+puts anagram.palindrome?()
 puts anagram.anagram_antigram()
