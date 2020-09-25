@@ -22,7 +22,7 @@ _There are no known bugs at this time._
 
 ## Support and contact details
 
-_If you have any questions or ideas on how to improve this project, feel free to contact us on GitHub_
+_If you have any questions or ideas on how to improve this project, feel free to contact me on GitHub_
 
 ## Technologies Used
 
