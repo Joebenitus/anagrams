@@ -32,6 +32,18 @@ describe('Anagram') do
   end
   it('add ability for anagram_antigram method to determine if input is neither anagrams or antigrams') do
     new_test = Anagram.new('ball', 'bury')
-    expect(new_test.anagram_antigram).to(eq('The words ball and bury are not anagrams or antigrams'))
+    expect(new_test.anagram_antigram).to(eq('The words ball and bury are not anagrams but they shared the following letter(s): \'b\''))
+  end
+  it('determines if phrases are anagrams or antigrams') do
+    new_test = Anagram.new('apple tea', 'ape leapt')
+    expect(new_test.anagram_antigram).to(eq('The words apple tea and ape leapt are anagrams!'))
+  end
+  it('shows which letters occur in both words if they are not anagrams/antigrams') do
+    new_test = Anagram.new('dog', 'got')
+    expect(new_test.anagram_antigram).to(eq('The words dog and got are not anagrams but they shared the following letter(s): \'o, g\''))
+  end
+  it('shows which letters occur in both words if they are not anagrams/antigrams') do
+    new_test = Anagram.new('race', 'car')
+    expect(new_test.palindrome?).to(eq('race car is a palindrome!'))
   end
 end

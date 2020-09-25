@@ -1,18 +1,20 @@
 class Anagram
   attr_reader(:word1, :word2)
   def initialize(word1, word2)
-    @word1 = word1.downcase
-    @word2 = word2.downcase
+    @word1 = word1
+    @word2 = word2
+    @word1_parsed = word1.downcase.split(/[, ]+/i).join('')
+    @word2_parsed = word2.downcase.split(/[, ]+/i).join('')
   end
 
   def get_matches
-    if @word1.length != @word2.length
+    if @word1_parsed.length != @word2_parsed.length
       false
     else
-      word_array = @word1.split('')
+      word_array = @word1_parsed.split('')
       bool_array = []
       word_array.each do |letter|
-        bool_array.push(@word2.include? letter)
+        bool_array.push(@word2_parsed.include? letter)
       end
       bool_array
     end
@@ -26,9 +28,14 @@ class Anagram
     end
   end
 
+  def palindrome?
+  end
+
   def anagram_antigram
+    common_letters = @word1_parsed.scan(/[#{@word2_parsed}]+/)
     if !self.get_matches | (get_matches.include?(false) & get_matches.include?(true))
-      "The words #{@word1} and #{@word2} are not anagrams or antigrams"
+      common_letters = common_letters[0].split('').join(', ')
+      "The words #{@word1} and #{@word2} are not anagrams but they shared the following letter(s): '#{common_letters}'"
     elsif !self.get_matches.include?(false)
       "The words #{@word1} and #{@word2} are anagrams!"
     elsif !self.get_matches.include?(true)
