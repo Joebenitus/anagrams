@@ -24,6 +24,6 @@ describe('Anagram') do
   end
   it('create method to check if the user inputs are anagrams or antigram by checking the bool array') do
     new_test = Anagram.new('ruby', 'bury')
-    expect(new_test.anagram_antigram).to(eq('The words you entered are anagrams!'))
+    expect(new_test.anagram_antigram).to(eq('The words ruby and bury are anagrams!'))
   end
 end

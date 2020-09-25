@@ -27,5 +27,12 @@ class Anagram
   end
 
   def anagram_antigram
+    if !self.get_matches
+      "The words #{@word1} and #{@word2} are not anagrams or antigrams"
+    elsif !self.get_matches.include?(false)
+      "The words #{@word1} and #{@word2} are anagrams!"
+    elsif !self.get_matches.include?(true)
+      "The words #{@word1} and #{@word2} have no matches and are antigrams!"
+    end
   end
 end
