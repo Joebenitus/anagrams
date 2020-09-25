@@ -8,6 +8,13 @@ class Anagram
   def anagrams?
     if @word1.length != @word2.length
       false
+    else
+      word_array = @word1.split('')
+      bool_array = []
+      word_array.each do |letter|
+        bool_array.push(@word2.include? letter)
+      end
     end
+  bool_array.include?(false) ? false : true
   end
 end
