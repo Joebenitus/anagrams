@@ -17,4 +17,12 @@ class Anagram
       bool_array.include?(false) ? false : true
     end
   end
+
+  def word?
+    if @word1.match(/[aeiou]/i) & @word2.match(/[aeiou]/i)
+      true
+    else
+      false
+    end
+  end
 end

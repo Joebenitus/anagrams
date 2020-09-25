@@ -18,4 +18,8 @@ describe('Anagram') do
     new_test = Anagram.new('RubY', 'BUry')
     expect(new_test.anagrams?).to(eq(true))
   end
+  it('create method which checks if word(s) contain at least one vowel') do
+    new_test = Anagram.new('fgjk', 'BUry')
+    expect(new_test.word?).to(eq(false))
+  end
 end
